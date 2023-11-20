@@ -1,0 +1,7 @@
+{
+  "name": "VisionKalyanApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
