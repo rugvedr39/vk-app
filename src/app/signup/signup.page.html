@@ -1,0 +1,41 @@
+<!-- src/app/signup-form/signup-form.component.html -->
+
+<form [formGroup]="signupForm" class="container mt-5" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" class="form-control" id="name" formControlName="name" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Create Password:</label>
+    <input type="password" class="form-control" id="password" formControlName="password" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="panNumber" class="form-label">PAN Number:</label>
+    <input type="text" class="form-control" id="panNumber" formControlName="panNumber" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="sponsorId" class="form-label">Sponsor ID:</label>
+    <input type="text" class="form-control" id="sponsorId" formControlName="sponsorId" (input)="checksponsername()">
+    <div *ngIf="name!=null" class="fw-bold">Sponserd Name: <span>{{name}}</span></div>
+  </div>
+
+  <div class="mb-3">
+    <label for="phoneNumber" class="form-label">Phone Number:</label>
+    <input type="tel" class="form-control" id="phoneNumber" formControlName="phoneNumber" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" formControlName="email" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="pin" class="form-label">PIN:</label>
+    <input type="text" class="form-control" id="pin" formControlName="pin" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary form-control mb-5" [disabled]="!signupForm.valid">Signup</button>
+</form>

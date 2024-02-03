@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Projects</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card *ngFor="let document of data" class="project-card">
+    <ion-card-header class="text-center fw-bold fs-2" >
+      {{ document.project_name }}
+    </ion-card-header>
+    <ion-card-content class="card-content">
+      <div>{{document.address}}</div>
+      <br><br>
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div *ngFor="let item of document.images; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
+            <img [src]="item" class="img-thumbnail d-block w-100" alt="Slide {{ i + 1 }}">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="map-container" [innerHTML]="sanitizeHTML(document.map)"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

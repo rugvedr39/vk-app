@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vision Kalyan</string>
+    <string name="title_activity_main">Vision Kalyan</string>
+    <string name="package_name">io.rugvedraikwar</string>
+    <string name="custom_url_scheme">io.rugvedraikwar</string>
+</resources>

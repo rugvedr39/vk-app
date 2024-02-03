@@ -1,0 +1,7 @@
+[build]
+  command = "ionic build --prod"
+  publish = "www"
+
+[context.production]
+  command = "ionic build --prod"
+  publish = "www"

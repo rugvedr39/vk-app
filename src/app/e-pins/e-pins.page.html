@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>MY EPINS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">MY EPINS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>EPIN</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let epin of pins; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ pins[i] }}</td>
+          <td><button class="btn btn-success" (click)="createuser(pins[i])">Create User</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

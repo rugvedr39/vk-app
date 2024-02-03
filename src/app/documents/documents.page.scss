@@ -1,0 +1,66 @@
+/* Add this to your component's SCSS file */
+
+ion-header {
+  ion-toolbar {
+    --background: #2c3e50;
+    --color: #ecf0f1;
+  }
+}
+
+ion-content {
+  ion-img {
+    max-width: 100%; /* Ensure images don't exceed their container width */
+    border: 1px solid #ddd; /* Add a subtle border around images */
+    border-radius: 8px; /* Add rounded corners */
+    margin: 20px 0; /* Add spacing between images */
+  }
+
+  div.text-center {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  hr {
+    border-top: 1px solid #ddd; /* Add a horizontal line for separation */
+    margin: 20px 0;
+  }
+
+  /* Zoom effect for ion-content */
+  .zoomable-content {
+    overflow: hidden;
+  }
+
+  .zoomable-content img {
+    transition: transform 0.3s ease; /* Add a smooth transition for zoom effect */
+  }
+
+  .zoomable-content img:hover {
+    transform: scale(1.1); /* Zoom in on hover */
+  }
+}
+
+/* Add animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ion-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  ion-content {
+    ion-img {
+      margin: 10px 0;
+    }
+  }
+}

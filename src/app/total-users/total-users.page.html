@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Total Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Total Users</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container mt-5">
+    <h2>User List</h2>
+    <div *ngIf="loading" class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    <table class="table" *ngIf="!loading" >
+        <thead>
+            <tr>
+                <th>#</th> <!-- Serial Number Column -->
+                <th>Username</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of data; let i = index" [ngClass]="{'table-success fw-bold': user.username === users }">
+                <td>{{ i + 1 }}</td> <!-- Serial Number Starts from 1 -->
+                <td>{{ user.username }}</td>
+                <td>{{ user.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</ion-content>

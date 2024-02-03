@@ -1,0 +1,91 @@
+/* Add this to your component's SCSS file */
+
+ion-header {
+    ion-toolbar {
+      --background: #2c3e50;
+      --color: #ecf0f1;
+    }
+  }
+  
+  ion-content {
+    div.p-3 {
+      margin: 20px auto; /* Center the container horizontally */
+      max-width: 800px; /* Set a fixed max-width for the container */
+  
+      .accordion-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        overflow: hidden;
+  
+        .accordion-header {
+          background-color: #3498db;
+          color: #fff;
+          font-weight: bold;
+  
+          button {
+            padding: 15px;
+          }
+        }
+  
+        .accordion-body {
+          padding: 15px;
+  
+          .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+  
+            .card-body {
+              .fw-bold {
+                color: #3498db;
+                font-size: 0.9em; /* Adjust font size for smaller text */
+              }
+            }
+  
+            .card-footer {
+              background-color: #f39c12;
+              color: #fff;
+              text-align: center;
+              font-weight: bold;
+              padding: 10px; /* Adjust padding for better spacing */
+  
+              /* Add a subtle border to the footer */
+              border-top: 1px solid #ddd;
+              border-radius: 0 0 8px 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* Add animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  ion-content {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+
+  .card-footer {
+    background-color: #f39c12; /* Warning background color */
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px; /* Adjust padding for better spacing */
+
+    /* Add a subtle border to the footer */
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+  }

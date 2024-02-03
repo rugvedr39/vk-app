@@ -1,0 +1,31 @@
+/* Custom CSS for color animations */
+.update-form {
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fadeInUp 0.5s ease; /* Optional: Add a fade-in animation */
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Bootstrap responsive classes */
+  @media (min-width: 576px) {
+    .update-form {
+      max-width: 600px; /* Adjust max-width for medium-sized screens */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .update-form {
+      max-width: 800px; /* Adjust max-width for large screens */
+    }
+  }
+  

@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Update Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Image Upload Section -->
+  <div class="update-form">
+    <h2>Image Upload</h2>
+
+    <div class="input-group">
+      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" (change)="onFileChanged($event)" accept="image/*">
+      <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" (click)="onUpload()" [disabled]="isLoading">
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <span *ngIf="isLoading">Loading...</span>
+        <span *ngIf="!isLoading">Upload</span>
+      </button>
+    </div>
+
+    <!-- Bank Details Section -->
+    <div class="form-group mt-3">
+      <h4>Account Details</h4>
+      <ion-item>
+        <ion-label position="stacked">Bank Name</ion-label>
+        <ion-input type="text" [(ngModel)]="bankName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Account Number</ion-label>
+        <ion-input type="text" [(ngModel)]="accountNumber"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">IFSC Code</ion-label>
+        <ion-input type="text" [(ngModel)]="ifscCode"></ion-input>
+      </ion-item>
+    </div>
+
+    <!-- Update Form -->
+    <form [formGroup]="updateForm" (ngSubmit)="onUpdate()" class="update-form">
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="updateForm.invalid" color="success">
+        Update
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

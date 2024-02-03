@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Downline</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Downline</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="p-3">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item" *ngFor="let level of [1, 2, 3, 4, 5, 6]; let i = index">
+          <div class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + level" aria-expanded="false" [attr.aria-controls]="'collapse' + level">
+              Level {{level}}
+            </button>
+          </div>
+          <div [id]="'collapse' + level" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div *ngFor="let item of user.downline">
+                <div class="card" *ngIf="item.level==level">
+                  <div class="card-body">
+                    <div class="fw-bold">{{item.username}}</div>
+                    {{item.name}}
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer bg-warning">
+                Total Users: {{ getTotalUsersByLevel(level) }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</ion-content>
